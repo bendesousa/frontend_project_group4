@@ -1,11 +1,11 @@
 import Genre from "./Genre";
 
-const GenresList = () => {
+const GenresList = ({tracks}) => {
 
     return (
         <>
             <h3>GenresList</h3>
-            <Genre/>
+            <Genre tracks={tracks}/>
         </>
         
     )

@@ -1,4 +1,4 @@
-const Genre = () => {
+const Genre = ({tracks}) => {
 
     return (
         <h4>Genre</h4>

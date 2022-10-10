@@ -21,7 +21,7 @@ const TrackContainer = () => {
     return (
         <>
             <h1>Track Container</h1>
-            <TrackList/>
+            <TrackList tracks={tracks}/>
         </>
     )
 

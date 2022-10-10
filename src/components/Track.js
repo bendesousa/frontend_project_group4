@@ -1,7 +1,13 @@
-const Track = () => {
+const Track = ({track}) => {
 
     return (
-        <h3>Track</h3>
+        <>
+       <h4> {track.name}</h4>
+       <p> {track.artist.name} </p>
+       <p> {track.genre} </p>
+       <p> Track length: {track.length}mins </p>
+        
+        </>
     )
 
 }
