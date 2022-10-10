@@ -13,24 +13,21 @@ const TrackContainer = () => {
         const response = await fetch("http://localhost:8080/tracks")
         const data = await response.json()
         setTracks(data)
-
-        //setTracks(data => setTracks(data))
-
     };
 
+    useEffect(() =>{loadTrackData()},[])
 
-    const [filteredTracks, setfilteredTracks] = useState();
+    const [filteredTracks, setfilteredTracks] = useState([]);
 
     const filterTracks = (searchTerm) => {
+        console.log(tracks.length)
         const foundTracks = tracks.filter(track => {
         return track.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
         setfilteredTracks(foundTracks)
-
-
     };
     
-    useEffect(() =>{loadTrackData()},[])
+   
 
     return (
         <BrowserRouter>
@@ -44,13 +41,12 @@ const TrackContainer = () => {
                     <li> Users</li>
                 </ul>
                 <Routes>
-                    <Route path ='/' element={<Home tracks={filteredTracks}/>} />
-                    <Route path ='/tracks' element={<TrackList tracks={filteredTracks ? filteredTracks : tracks}/>} />
+                    <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks}/>} />
+                    <Route path ='/tracks' element={<TrackList tracks={tracks}/>} />
                     <Route path ='/tracks/genre' element={<GenresList />} />
                     {/* <Route path ='/playlist' element={<Contact />} /> */}
                 </Routes>
             </header>
-            <Search filterTracks={filterTracks}/>
         </BrowserRouter>
         
     )
