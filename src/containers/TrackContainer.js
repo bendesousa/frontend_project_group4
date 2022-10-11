@@ -43,7 +43,7 @@ const TrackContainer = () => {
        
     }
     
-        const UserContext = React.createContext("hello")
+        const UserContext = React.createContext("hello")//Wed morning
    
 
     return (
@@ -93,7 +93,7 @@ const TrackContainer = () => {
             <Routes>
                     <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
-                    <Route path ='/tracks/genre' element={<GenresList />} />
+                    <Route path ='/tracks/genre' element={<GenresList tracks={tracks}/>} />
                     <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist}/>} />
             </Routes>
 

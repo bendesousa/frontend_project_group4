@@ -1,7 +1,9 @@
-const Genre = ({tracks}) => {
+
+const Genre = ({track}) => {
 
     return (
-        <h4>Genre</h4>
+        <h4>{track.genre}</h4>
+        
     )
 
 }

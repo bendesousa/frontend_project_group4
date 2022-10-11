@@ -15,7 +15,7 @@ const trackComponent = tracks.map((track) => {
         <>
             <h2>TrackList</h2>
             {trackComponent}
-            <GenresList tracks={tracks}/>
+            <GenresList tracks={tracks} />
             
         </>
     )
