@@ -2,19 +2,16 @@ import TrackList from "../components/TrackList";
 import { useState, useEffect } from "react";
 import Home from "../components/Home";
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
-  
-
 import GenresList from "../components/GenresList";
-import Search from "../components/Search";
+
 
 const TrackContainer = () => {
 
     const[tracks, setTracks] = useState([]);
     
     const loadTrackData = async () =>{
-        const response = await fetch("http://localhost:3000/tracks")
+        const response = await fetch("http://localhost:8080/tracks")
         const data = await response.json()
         setTracks(data)
     };
@@ -45,10 +42,11 @@ const TrackContainer = () => {
                     <li><Link to='/tracks'>Tracks</Link></li>
                     <li><Link to='/tracks/genre'>Genre</Link></li>
                     <li>
+                    
                     <div className="dropdown">
                     <Dropdown>
                         <Dropdown.Toggle variant="success">
-                            Current Trent
+                            Current Trends
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item href="#">
@@ -62,6 +60,7 @@ const TrackContainer = () => {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
+                   
                     </div>
                     </li>
                     
@@ -79,15 +78,15 @@ const TrackContainer = () => {
 
                 
             </nav>
-            <body>
+   
             <Routes>
                     <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks}/>} />
                     <Route path ='/tracks/genre' element={<GenresList />} />
                     {/* <Route path ='/playlist' element={<Contact />} /> */}
-                </Routes>
-            </body>
+            </Routes>
 
+            
         </BrowserRouter>
         
     )
