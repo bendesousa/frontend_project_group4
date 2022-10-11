@@ -7,6 +7,11 @@ const Playlist = ({userTracks, addToPlaylist, users}) => {
         return <User user={user} key={user.id} /> 
     })
     
+    // const removeButton = () => {
+
+    // }
+
+
     return (
         <>
         <h3>Playlist</h3>

@@ -1,10 +1,11 @@
 import TrackList from "../components/TrackList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import Home from "../components/Home";
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import GenresList from "../components/GenresList";
 import UserContainer from "./UserContainer";
+import React from "react";
 
 
 const TrackContainer = () => {
@@ -42,6 +43,7 @@ const TrackContainer = () => {
        
     }
     
+        const UserContext = React.createContext("hello")
    
 
     return (
