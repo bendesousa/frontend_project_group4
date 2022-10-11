@@ -1,5 +1,14 @@
 
-const User = () => {
+const User = ({user} ) => {
+return(
+    <> 
+    
+    <p> {user.userName}</p>
+    <p> {user.id}</p>
+
+    </>
+)
+
 
 }
 

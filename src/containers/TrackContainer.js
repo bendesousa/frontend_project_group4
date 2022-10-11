@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import GenresList from "../components/GenresList";
 import Playlist from "../components/Playlist";
+import UserContainer from "./UserContainer";
 
 
 const TrackContainer = () => {
@@ -92,7 +93,7 @@ const TrackContainer = () => {
                     <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks} />} />
                     <Route path ='/tracks/genre' element={<GenresList />} />
-                    <Route path ='/playlist' element={<Playlist tracks={userTracks} addToPlayList={addToPlayList}/>} />
+                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlayList={addToPlayList}/>} />
             </Routes>
 
             

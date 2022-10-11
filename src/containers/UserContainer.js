@@ -2,7 +2,7 @@ import Playlist from "../components/Playlist";
 import { useState, useEffect } from "react";
 
 
-const UserContainer = () => {
+const UserContainer = ({tracks, addToPlaylist}) => {
 
     const[users, setUsers] = useState([]);
 
@@ -18,7 +18,7 @@ const UserContainer = () => {
         <>
 
             <h1>UserContainer</h1>
-            <Playlist tracks={userTracks} />
+            <Playlist tracks={tracks} addToPlaylist = {addToPlaylist} users = {users} />
 
                 
         </>
