@@ -1,4 +1,11 @@
-const Track = ({track}) => {
+const Track = ({track, addToPlaylist}) => {
+
+
+
+const handleClick = () => {
+    addToPlaylist(track.id)
+}
+
 
     return (
         <>
@@ -6,7 +13,7 @@ const Track = ({track}) => {
        <p> {track.artist.name} </p>
        <p> {track.genre} </p>
        <p> Track length: {track.length}mins </p>
-        
+        <button onClick={handleClick}>Add to playlist</button>
         </>
     )
 
