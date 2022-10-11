@@ -6,8 +6,12 @@ function App() {
   return (
     <>
     <div className="App">
+      
+      <body>
       <TrackContainer />
       <UserContainer/>
+      </body>
+      
     </div>
 
 
