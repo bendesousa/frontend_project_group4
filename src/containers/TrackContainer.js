@@ -44,7 +44,7 @@ const TrackContainer = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tracks'>Tracks</Link></li>
                     <li><Link to='/tracks/genre'>Genre</Link></li>
-
+                    <li>
                     <div className="dropdown">
                     <Dropdown>
                         <Dropdown.Toggle variant="success">
@@ -63,6 +63,8 @@ const TrackContainer = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                     </div>
+                    </li>
+                    
                     
 
                     {/* <li><Link to='/playlist'>Playlist </Link></li> // Playlist by ID */}

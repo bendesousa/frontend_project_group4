@@ -1,5 +1,4 @@
 /* Nav bar Styleing*/
- /* NAVBAR STYLING STARTS */
 .navbar {
   display: flex;
   align-items: center;
@@ -29,15 +28,14 @@
  .menu li {
   padding: 5px 14px;
  }
- 
- /* DROPDOWN MENU */
+ /* DROPDOWN  */
  .current_trent {
   position: relative; 
  }
  .dropdown {
   background-color: rgb(1, 139, 139);
   padding: 1em 0;
-  position: absolute; /*WITH RESPECT TO PARENT*/
+  position: absolute; 
   display: none;
   border-radius: 8px;
   top: 35px;
