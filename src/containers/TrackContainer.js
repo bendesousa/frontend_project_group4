@@ -4,7 +4,6 @@ import Home from "../components/Home";
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import GenresList from "../components/GenresList";
-import Playlist from "../components/Playlist";
 import UserContainer from "./UserContainer";
 
 
@@ -32,8 +31,8 @@ const TrackContainer = () => {
 
     const [userTracks, setUserTracks] = useState([]);
 
-    const addToPlayList = async (id) => {
-        const response = await fetch('http:localhost:8080/playlists/1/tracks/' + id, {
+    const addToPlaylist = async (id) => {
+        const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
         method: 'POST', 
         headers:{'Content-Type': 'application/json'}
         })
@@ -90,10 +89,10 @@ const TrackContainer = () => {
             </nav>
    
             <Routes>
-                    <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks}/>} />
-                    <Route path ='/tracks' element={<TrackList tracks={tracks} />} />
+                    <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist}/>} />
+                    <Route path ='/tracks' element={<TrackList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
                     <Route path ='/tracks/genre' element={<GenresList />} />
-                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlayList={addToPlayList}/>} />
+                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist}/>} />
             </Routes>
 
             

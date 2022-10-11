@@ -1,7 +1,7 @@
 import TrackList from "./TrackList";
 import User from "./User";
 
-const Playlist = ({userTracks, addToPlayList, users}) => {
+const Playlist = ({userTracks, addToPlaylist, users}) => {
 
     const userComponent = users.map((user) => { 
         return <User user={user} key={user.id} /> 
@@ -10,7 +10,7 @@ const Playlist = ({userTracks, addToPlayList, users}) => {
     return (
         <>
         <h3>Playlist</h3>
-        <TrackList tracks={userTracks} addToPlayList={addToPlayList} user = {userComponent}/>
+        <TrackList tracks={userTracks} addToPlaylist={addToPlaylist} users = {users}/>
         </>
     )
 
