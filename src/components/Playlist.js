@@ -1,11 +1,11 @@
 import TrackList from "./TrackList";
 
-const Playlist = ({userTracks}) => {
+const Playlist = ({userTracks, addToPlayList}) => {
 
     return (
         <>
         <h3>Playlist</h3>
-        <TrackList tracks={userTracks} />
+        <TrackList tracks={userTracks} addToPlayList={addToPlayList}/>
         </>
     )
 

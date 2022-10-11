@@ -3,10 +3,10 @@ import GenresList from "./GenresList";
 
 
 
-const TrackList = ({tracks, addToPlayList}) => {
+const TrackList = ({tracks, addToPlaylist}) => {
 
 const trackComponent = tracks.map((track) => { 
-    return <Track track={track} key={track.id} addToPlaylist={addToPlayList}/> //Track id isn't working like we expect to for keys
+    return <Track track={track} key={track.id} addToPlaylist={addToPlaylist}/> 
 })
 
 

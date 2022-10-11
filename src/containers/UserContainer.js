@@ -18,7 +18,7 @@ const UserContainer = () => {
         <>
 
             <h1>UserContainer</h1>
-            <Playlist users={users} />
+            <Playlist tracks={userTracks} />
 
                 
         </>
