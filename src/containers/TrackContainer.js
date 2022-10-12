@@ -32,6 +32,10 @@ const TrackContainer = () => {
 
     const [userTracks, setUserTracks] = useState([]);
 
+    // const ButtonFunctions = {
+    //     addToPlaylist,
+    //     removeFromPlaylist
+    // }
     const addToPlaylist = async (id) => {
         const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
         method: 'POST', 
@@ -42,8 +46,20 @@ const TrackContainer = () => {
         setUserTracks([...updatedPlaylist.tracks]);
        
     }
+
+    const removeFromPlaylist = async (id) => {
+        const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
+        method: 'DELETE', 
+        headers:{'Content-Type': 'application/json'}
+        })
+
+        const updatedPlaylist = await response.json();
+        setUserTracks([...updatedPlaylist.tracks]);
+    }
     
-        const UserContext = React.createContext("hello")//Wed morning
+        // const ButtonContext = React.createContext(addToPlaylist)
+        // function 
+        
    
 
     return (
@@ -94,7 +110,7 @@ const TrackContainer = () => {
                     <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
                     <Route path ='/tracks/genre' element={<GenresList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
-                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist}/>} />
+                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist} removeFromPlaylist={removeFromPlaylist}/>} />
             </Routes>
 
             
