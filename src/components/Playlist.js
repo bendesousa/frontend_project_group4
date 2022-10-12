@@ -1,6 +1,7 @@
 import TrackList from "./TrackList";
 import User from "./User";
 
+
 const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist}) => {
 
     const userComponent = users.map((user) => { 
@@ -11,11 +12,17 @@ const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist}) => {
 
     // }
 
+     playlists.map((playlist) => { 
+      return (  playlist={playlist} )
+       
+    })
 
     return (
         <>
-        <h3>Playlist</h3>
+
+        <h3>{playlists.name}</h3>
         <TrackList tracks={userTracks} addToPlaylist={addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist}/>
+
         </>
     )
 

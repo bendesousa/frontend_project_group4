@@ -12,16 +12,26 @@ const UserContainer = ({tracks, addToPlaylist, removeFromPlaylist}) => {
         setUsers(data)
     };
 
-    useEffect(() =>{loadUserData()},[])
+    useEffect(() =>{loadUserData()},[]);
 
+    const [playlists, setPlaylists] = useState([]);
+    
+    const loadPlaylistData = async () =>{
+        const response = await fetch("http://localhost:8080/playlists/1")
+        const data = await response.json()
+        setPlaylists(data)
+    };
 
+    useEffect(() =>{loadPlaylistData()}, []);
 
     
     return (
         <>
 
             <h1>UserContainer</h1>
+
             <Playlist userTracks={tracks} addToPlaylist = {addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist}/>
+
 
                 
         </>

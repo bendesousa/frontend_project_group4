@@ -47,6 +47,7 @@ const TrackContainer = () => {
        
     }
 
+
     const removeFromPlaylist = async (id) => {
         const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
         method: 'DELETE', 
@@ -56,6 +57,7 @@ const TrackContainer = () => {
         const updatedPlaylist = await response.json();
         setUserTracks([...updatedPlaylist.tracks]);
     }
+
     
         // const ButtonContext = React.createContext(addToPlaylist)
         // function 
