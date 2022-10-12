@@ -68,3 +68,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## BNTA SPOTIFY CLONE FRONT-END PROJECT
+
+### TABLE OF CONTENTS
+
+### SUMMARY
+
+This is the front-end for the BNTA Spotify Clone backend project which was produced by the API Rangers otherwise known as Faizan, Hasmeet, Joao and Milo. It is an APP that works similarly to 
+
+
+### STEP-BY-STEP SETUP INSTRUCTIONS
+
+1. Clone this repository : git clone git@github.com:bendesousa/frontend_project_group4.git
+
+2. Open the server-side repo backend-project in IntelliJ and run the SpringBoot application
+
+the server port should configure to 8080 by default
+Open the client-side repo frontend-project in Visual Studio Code and run npm install to install the required node modules
+
+Run the front-end application using npm start where it should run the application on localhost:3000
+
+Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080
+
+
+
+### PROJECT STRUCTURE/DESCRIPTION
+
+
+### FURTHER IMPLEMENTATION/EXTENSIONS
+
+
+### ACKNOWLEDGEMENTS
+
+A huge thanks to the trainers at BNTA! 
+
