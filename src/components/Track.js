@@ -16,7 +16,7 @@ const handleClick = () => {
        <p> {track.artist.name} </p>
        <p> {track.genre} </p>
        <p> Track length: {track.length}mins </p>
-        {/* <button onClick={handleClick}>Add to playlist</button> */}
+        <button onClick={handleClick}>Add to playlist</button>
         </>
     )
 
