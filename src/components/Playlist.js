@@ -12,15 +12,18 @@ const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist, playlis
 
     // }
 
-     playlists.map((playlist) => { 
-      return (  playlist={playlist} )
+    //  playlists.map((playlist) => { 
+    //   return (  playlist={playlist} )
        
-    })
+    // })
 
     return (
         <>
 
-        <h3>{playlists.name}</h3>
+        {playlists.map((playlist, index) => {
+            return <h3 key={index}>{playlist.name}</h3>
+        })}
+        {/* <h3>{playlists.name}</h3> */}
         <TrackList tracks={userTracks} addToPlaylist={addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist}/>
 
         </>

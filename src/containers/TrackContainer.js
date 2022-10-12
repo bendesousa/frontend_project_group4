@@ -1,4 +1,5 @@
 import TrackList from "../components/TrackList";
+import Playlist from "../components/Playlist";
 import { useState, useEffect, createContext } from "react";
 import Home from "../components/Home";
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
@@ -57,7 +58,39 @@ const TrackContainer = () => {
         const updatedPlaylist = await response.json();
         setUserTracks([...updatedPlaylist.tracks]);
     }
+    const[users, setUsers] = useState([]);
 
+    const loadUserData = async () =>{
+        const response = await fetch("http://localhost:8080/users")
+        const data = await response.json()
+        setUsers(data)
+    };
+
+    useEffect(() =>{loadUserData()},[]);
+
+    const [playlists, setPlaylists] = useState([]);
+    
+    const loadPlaylistData = async () =>{
+        const response = await fetch("http://localhost:8080/playlists/1")
+        const data = await response.json()
+        setPlaylists(data)
+    };
+
+    useEffect(() =>{loadPlaylistData()}, []);
+
+    // const [userPlaylists, setUserPlaylists] = useState([]);
+
+    const addPlaylist = async (newPlaylist) => {
+        const response = await fetch('http://localhost:8080/playlists/'+ users[0].id +'/' + newPlaylist.name , {
+        method: 'POST', 
+        headers:{'Content-Type': 'application/json'},
+        // body:JSON.stringify(newPlaylist)
+        })
+
+        const addedPlaylist = await response.json();
+        setPlaylists([...playlists, addedPlaylist]);
+       
+    }
     
         // const ButtonContext = React.createContext(addToPlaylist)
         // function 
@@ -109,10 +142,11 @@ const TrackContainer = () => {
             </nav>
    
             <Routes>
-                    <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist}/>} />
+                    <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist} addPlaylist={addPlaylist}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
                     <Route path ='/tracks/genre' element={<GenresList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
-                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist} removeFromPlaylist={removeFromPlaylist}/>} />
+                    <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist} 
+                    removeFromPlaylist={removeFromPlaylist} users={users} playlists={playlists} addPlaylist={addPlaylist}/> } />
             </Routes>
 
             

@@ -76,7 +76,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### SUMMARY
 
-This is the front-end for the BNTA Spotify Clone backend project which was produced by the API Rangers otherwise known as Faizan, Hasmeet, Joao and Milo. It is an APP that works similarly to 
+This is the front-end for the BNTA Spotify Clone backend project which was produced by the API Rangers otherwise known as Faizan, Hasmeet, Joao and Milo. It is an APP that works similarly to
 
 
 ### STEP-BY-STEP SETUP INSTRUCTIONS

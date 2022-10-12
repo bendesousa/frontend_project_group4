@@ -18,7 +18,7 @@ const PlaylistForm = ({addPlaylist}) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        addPlaylist(statePlaylist)
+        addPlaylist(statePlaylist);
     }
 
     return(

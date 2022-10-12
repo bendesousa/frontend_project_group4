@@ -3,48 +3,17 @@ import { useState, useEffect } from "react";
 import Home from "../components/Home";
 
 
-const UserContainer = ({tracks, addToPlaylist, removeFromPlaylist}) => {
+const UserContainer = ({tracks, addToPlaylist, removeFromPlaylist, users, playlists, addPlaylist}) => {
 
-    const[users, setUsers] = useState([]);
-
-    const loadUserData = async () =>{
-        const response = await fetch("http://localhost:8080/users")
-        const data = await response.json()
-        setUsers(data)
-    };
-
-    useEffect(() =>{loadUserData()},[]);
-
-    const [playlists, setPlaylists] = useState([]);
+   
     
-    const loadPlaylistData = async () =>{
-        const response = await fetch("http://localhost:8080/playlists/1")
-        const data = await response.json()
-        setPlaylists(data)
-    };
-
-    useEffect(() =>{loadPlaylistData()}, []);
-
-    const [userPlaylists, setUserPlaylists] = useState([]);
-
-    const addPlaylist = async () => {
-        const response = await fetch(`http://localhost:8080/playlists/1/${""}` , {
-        method: 'POST', 
-        headers:{'Content-Type': 'application/json'}
-        })
-
-        const addedPlaylist = await response.json();
-        setUserPlaylists([...addedPlaylist.playlists]);
-       
-    }
-
     
     return (
         <>
 
          
-            <Home addPlaylist={addPlaylist}/>
-            <Playlist userTracks={tracks} addToPlaylist = {addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist} playlists={playlists}/>
+            {/* <Home addPlaylist={addPlaylist} filterTracks={tracks}/> */}
+            <Playlist userTracks={tracks} addToPlaylist = {addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist} playlists={playlists} addPlaylist={addPlaylist}/>
 
 
                 
