@@ -109,10 +109,17 @@ This is the front-end for the BNTA Spotify Clone backend project, tt is an APP t
 
 #### Personal Playlists
 
+-User can create multiple playlists
+-User can add any song they wish from the database into their playlist with the click of a button
+-User can remove any song from their playlist
+-User can add duplicate songs to their playlist
+
+
 #### Search by Song Name and filter by Genre
 
-
-
+- User can load all songs in the database
+- User can filter songs by Genre 
+- User can search songs by song name
 
 
 
@@ -120,7 +127,11 @@ This is the front-end for the BNTA Spotify Clone backend project, tt is an APP t
 
 #### Create multiple users 
 
+-Add multiple users so that they can have separate accounts and playlists saved to their music accounts
+
 #### Favouriting Functionality 
+
+-Add a favouriting functionality where you can favourite songs
 
 ### ACKNOWLEDGEMENTS
 
