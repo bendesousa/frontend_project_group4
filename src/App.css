@@ -1,12 +1,12 @@
 /* Nav bar Styleing*/
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   background-color: teal;
   color: #fff;
- }
+ } */
  .nav-links a {
   color: #fff;
  }
@@ -51,4 +51,6 @@
   display: block;
  }
 
+ /* Background */
+ 
  
