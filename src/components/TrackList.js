@@ -13,7 +13,6 @@ const trackComponent = tracks.map((track) => {
 
     return (
         <>
-            <h2>TrackList</h2>
             {trackComponent}
         </>
     )

@@ -28,7 +28,7 @@ const UserContainer = ({tracks, addToPlaylist, removeFromPlaylist}) => {
     return (
         <>
 
-            <h1>UserContainer</h1>
+         
 
             <Playlist userTracks={tracks} addToPlaylist = {addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist} playlists={playlists}/>
 
