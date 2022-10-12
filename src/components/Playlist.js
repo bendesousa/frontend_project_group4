@@ -2,7 +2,7 @@ import TrackList from "./TrackList";
 import User from "./User";
 
 
-const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist}) => {
+const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist, playlists}) => {
 
     const userComponent = users.map((user) => { 
         return <User user={user} key={user.id} /> 
