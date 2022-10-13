@@ -1,12 +1,13 @@
-const Track = ({track, addToPlaylist, removeFromPlaylist}) => {
+const Track = ({track, addToPlaylist, removeFromPlaylist, playlistId}) => {
 
 const handleClick = () => {
     addToPlaylist(track.id)
 }
 
 const handlePress = () => {
-    removeFromPlaylist(track.id)
+    removeFromPlaylist(playlistId, track.id)
 }
+
 
 // If tracklist === playlist then NoDisplay button else display button 
 
@@ -16,8 +17,8 @@ const handlePress = () => {
        <p> {track.artist.name} </p>
        <p> {track.genre} </p>
        <p> Track length: {track.length}mins </p>
-        <button onClick={handleClick}>Add to playlist</button>
-        <button onClick={handlePress}>Remove from playlist</button>
+       { addToPlaylist ? <button onClick={handleClick}>Add to playlist</button> : <button onClick={handlePress}>Remove from playlist</button>}
+        
         </>
     )
 

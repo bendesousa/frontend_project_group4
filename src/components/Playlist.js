@@ -9,9 +9,14 @@ const Playlist = ({userTracks, addToPlaylist, users, removeFromPlaylist, playlis
     return (
         <>
         {playlists.map((playlist, index) => {
-            return <h3 key={index}>{playlist.name}</h3>
+
+            return (<>
+
+            <h3 key={index}>{playlist.name}</h3>
+            <TrackList tracks={playlist.tracks}  playlistId={playlist.id} removeFromPlaylist={removeFromPlaylist}/>
+            </>)
         })}
-        <TrackList tracks={userTracks} addToPlaylist={addToPlaylist} users = {users} removeFromPlaylist={removeFromPlaylist}/>
+       
         </>
     )
 }

@@ -10,7 +10,10 @@ import Logo from "../assets/logo_season_2.png";
 
 
 const TrackContainer = () => {
-
+    const[users, setUsers] = useState([]);
+    const [playlists, setPlaylists] = useState([]);
+    const [userTracks, setUserTracks] = useState([]);
+    const [filteredTracks, setfilteredTracks] = useState([]);
     const [tracks, setTracks] = useState([]);
     
     const loadTrackData = async () =>{
@@ -21,8 +24,6 @@ const TrackContainer = () => {
 
     useEffect(() =>{loadTrackData()},[])
 
-    const [filteredTracks, setfilteredTracks] = useState([]);
-
     const filterTracks = (searchTerm) => {
        
         const foundTracks = tracks.filter(track => {
@@ -31,7 +32,6 @@ const TrackContainer = () => {
         setfilteredTracks(foundTracks)
     };
 
-    const [userTracks, setUserTracks] = useState([]);
 
     const addToPlaylist = async (id) => {
         const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
@@ -45,16 +45,27 @@ const TrackContainer = () => {
     }
 
 
-    const removeFromPlaylist = async (id) => {
-        const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
-        method: 'DELETE', 
-        headers:{'Content-Type': 'application/json'}
+    const removeFromPlaylist =  async(playlistId, trackId) => {
+        await fetch(`http://localhost:8080/playlists/${playlistId}/tracks/${trackId}`, {
+            method: 'DELETE', 
+            headers: {'Content-Type': 'application/json'}
         })
 
-        const updatedPlaylist = await response.json();
-        setUserTracks([...updatedPlaylist.tracks]);
+        let newPlaylists = playlists
+        const index = playlists.findIndex(playlist => playlist.id === playlistId)
+        //console.log([3], [2] => filter)
+        newPlaylists[index].tracks = playlists[index].tracks.filter(track => track.id !== trackId)
+        // console.log 🤌🤌🤌
+        // array.filter :(
+        // const result = filter :)
+        
+
+        setPlaylists([...newPlaylists])
+        
+
+        
     }
-    const[users, setUsers] = useState([]);
+
 
     const loadUserData = async () =>{
         const response = await fetch("http://localhost:8080/users")
@@ -64,10 +75,9 @@ const TrackContainer = () => {
 
     useEffect(() =>{loadUserData()},[]);
 
-    const [playlists, setPlaylists] = useState([]);
     
     const loadPlaylistData = async () =>{
-        const response = await fetch("http://localhost:8080/playlists/1")
+        const response = await fetch("http://localhost:8080/playlists/2")
         const data = await response.json()
         setPlaylists(data)
     };

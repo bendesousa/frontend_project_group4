@@ -46,9 +46,9 @@
   display: block;
  }
 
-<<<<<<< HEAD
+
  /* BUTTON */
- .animated-button {
+ /* .animated-button {
   background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
   padding: 20px 40px;
   margin: 12px;
@@ -118,4 +118,4 @@
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-}
+} */
