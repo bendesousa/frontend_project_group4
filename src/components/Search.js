@@ -10,6 +10,7 @@ const Search = ({filterTracks}) => {
     }
   
     return (
+      <>
         
         <form className="search" role="search" onSubmit={handleSubmit}>
           <label className="search__label" htmlFor="search__input"></label>
@@ -20,6 +21,14 @@ const Search = ({filterTracks}) => {
             onChange={event => setsearchTerm(event.target.value)} />
           <input type="submit" value="Submit" className="search__submit"/>
         </form>
+
+        <br />
+        <br />
+        <br />
+        <br />        
+
+      
+        </>
 
     )
   }
