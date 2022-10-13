@@ -7,6 +7,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import GenresList from "../components/GenresList";
 import UserContainer from "./UserContainer";
 import React from "react";
+import Logo from "../assets/logo_season_2.png";
 
 
 const TrackContainer = () => {
@@ -100,7 +101,9 @@ const TrackContainer = () => {
     return (
         <BrowserRouter>
             <nav className='navbar'>
-                <div className="logo"> Logo </div>
+                <div className="logo">
+                    <img src={Logo} alt="API Rangers Season 2" width={300}/>
+                </div>
                 <ul className="nav-links">
        
 
