@@ -55,8 +55,10 @@
   list-style-type: none;
  }
 
- /* addtoPlaylist Button */
+ /* addtoPlaylist/removePlaylist Button */
 .addtoPlaylist{
 background-color: black;
 color: aliceblue;
 }
+
+/*Home Page styling */

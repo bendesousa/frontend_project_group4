@@ -6,6 +6,11 @@ const Home = ({filterTracks, filteredTracks, addToPlaylist, addPlaylist}) => {
 
     return (
         <>
+        <div className="lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+        </div>
         <h3>Search for a song</h3>
         <Search filterTracks={filterTracks}/>
         <TrackList  tracks={filteredTracks} addToPlaylist={addToPlaylist} />
