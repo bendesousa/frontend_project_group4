@@ -34,9 +34,7 @@ const PlaylistForm = ({addPlaylist}) => {
             
                 <button type="submit">OK</button>
             </form>
-    
     )
-
 }
 
 export default PlaylistForm;

@@ -1,10 +1,9 @@
-import Genre from "./Genre";
-import { useState, createContext, useContext } from "react";
 const GenresList = ({tracks, addToPlaylist}) => {
    
         const handleClick = (id) => {
         addToPlaylist(id)
     }
+
     return (
         <>
             <h3>GenresList</h3>
@@ -111,11 +110,8 @@ const GenresList = ({tracks, addToPlaylist}) => {
             }<br /> 
             
             </ul>
-            
-        </>
-        
+        </> 
     )
-
 }
 
 export default GenresList;

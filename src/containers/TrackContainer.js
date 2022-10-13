@@ -1,6 +1,5 @@
 import TrackList from "../components/TrackList";
-import Playlist from "../components/Playlist";
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 import Home from "../components/Home";
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -34,10 +33,6 @@ const TrackContainer = () => {
 
     const [userTracks, setUserTracks] = useState([]);
 
-    // const ButtonFunctions = {
-    //     addToPlaylist,
-    //     removeFromPlaylist
-    // }
     const addToPlaylist = async (id) => {
         const response = await fetch('http://localhost:8080/playlists/1/tracks/' + id, {
         method: 'POST', 
@@ -85,19 +80,13 @@ const TrackContainer = () => {
         const response = await fetch('http://localhost:8080/playlists/'+ users[0].id +'/' + newPlaylist.name , {
         method: 'POST', 
         headers:{'Content-Type': 'application/json'},
-        // body:JSON.stringify(newPlaylist)
         })
 
         const addedPlaylist = await response.json();
         setPlaylists([...playlists, addedPlaylist]);
        
     }
-    
-        // const ButtonContext = React.createContext(addToPlaylist)
-        // function 
         
-   
-
     return (
         <BrowserRouter>
             <nav className='navbar'>
@@ -105,8 +94,6 @@ const TrackContainer = () => {
                     <img src={Logo} alt="API Rangers Season 2" width={300}/>
                 </div>
                 <ul className="nav-links">
-       
-
                 <div className="menu">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tracks'>Tracks</Link></li>
@@ -137,13 +124,9 @@ const TrackContainer = () => {
                    
                     </div>
                     </li>
-
                 </div>
-               
                 </ul>
-
             </nav>
-   
             <Routes>
                     <Route path ='/' element={<Home filterTracks={filterTracks} filteredTracks={filteredTracks} addToPlaylist={addToPlaylist} addPlaylist={addPlaylist}/>} />
                     <Route path ='/tracks' element={<TrackList tracks={tracks} addToPlaylist={addToPlaylist}/>} />
@@ -151,12 +134,8 @@ const TrackContainer = () => {
                     <Route path ='/playlist' element={<UserContainer tracks={userTracks} addToPlaylist={addToPlaylist} 
                     removeFromPlaylist={removeFromPlaylist} users={users} playlists={playlists} addPlaylist={addPlaylist}/> } />
             </Routes>
-
-            
         </BrowserRouter>
-        
     )
-
 }
 
 export default TrackContainer;
