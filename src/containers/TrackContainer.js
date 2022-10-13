@@ -111,7 +111,7 @@ const TrackContainer = () => {
                     <li><Link to='/playlist'>Playlist </Link></li> 
                     <li>
                     
-                    <div className="dropdown">
+                    <div className="animated-button1">
                     <Dropdown>
                         <Dropdown.Toggle variant="success">
                             Users

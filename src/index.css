@@ -19,3 +19,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p {
+  line-height: 1.43;
+  font-size: 20px;
+  max-width: 640px;
+  font-weight: 500;
+}
+
+.wrapper-dark {
+  background-color: #111;
+  color: white;
+}
