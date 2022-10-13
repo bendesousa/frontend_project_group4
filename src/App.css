@@ -42,6 +42,7 @@
   display: block;
  }
 
+<<<<<<< HEAD
  /* BUTTON */
  .animated-button {
   background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
@@ -114,5 +115,3 @@
             transform: translateX(-100%);
   }
 }
- 
- 

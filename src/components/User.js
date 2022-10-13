@@ -1,4 +1,3 @@
-
 const User = ({user} ) => {
 return(
     <> 
@@ -8,7 +7,6 @@ return(
 
     </>
 )
-
 
 }
 
