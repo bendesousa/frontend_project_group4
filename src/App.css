@@ -50,5 +50,13 @@
   right: 0;
 }
 
- /* BUTTON */
- 
+ /* GenreLsit */
+ .genreList{
+  list-style-type: none;
+ }
+
+ /* addtoPlaylist Button */
+.addtoPlaylist{
+background-color: black;
+color: aliceblue;
+}

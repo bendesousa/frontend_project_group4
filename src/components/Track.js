@@ -17,7 +17,7 @@ const handlePress = () => {
        <h5> Artist: {track.artist.name} </h5>
        <h6> Genre: {track.genre} </h6>
        <h7>  {track.length}mins </h7>
-       { addToPlaylist ? <button onClick={handleClick}>Add to playlist</button> : <button onClick={handlePress}>Remove from playlist</button>}<br /> <br /> <br /> <br />
+       { addToPlaylist ? <button class="addtoPlaylist" onClick={handleClick}>Add to playlist</button> : <button class="addtoPlaylist" onClick={handlePress}>Remove from playlist</button>}<br /> <br /> <br /> <br />
         </>
     )
 
