@@ -1,6 +1,10 @@
+.navbar {
+  background-color: rgba(133,37,50,255);
+}
+
 /* Nav bar Styleing*/
  .nav-links a {
-  color: #fff;
+  color: rgba(48,50,52,255);
  }
  /* LOGO */
  .logo {
