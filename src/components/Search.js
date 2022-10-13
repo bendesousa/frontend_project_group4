@@ -12,7 +12,7 @@ const Search = ({filterTracks}) => {
     return (
         
         <form className="search" role="search" onSubmit={handleSubmit}>
-          <label className="search__label" htmlFor="search__input">Search for a track:</label>
+          <label className="search__label" htmlFor="search__input"></label>
           <input 
             type="search" 
             placeholder="Please type here..." id="search__input" 
