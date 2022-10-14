@@ -22,6 +22,7 @@ const PlaylistForm = ({addPlaylist}) => {
     }
 
     return(
+      
             <form onSubmit={handleFormSubmit}>
                 <h3>Add a new playlist</h3>
                 
@@ -34,6 +35,7 @@ const PlaylistForm = ({addPlaylist}) => {
             
                 <button type="submit">OK</button>
             </form>
+            
     )
 }
 

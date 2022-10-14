@@ -11,8 +11,8 @@ const Home = ({filterTracks, filteredTracks, addToPlaylist, addPlaylist}) => {
             <div className="line"></div>
             <div className="line"></div>
         </div>
-        <h3>Search for a song</h3>
-        <Search filterTracks={filterTracks}/>
+        <h3><br /> <br /> <br />Search for a song</h3>
+        <Search  filterTracks={filterTracks}/>
         <TrackList  tracks={filteredTracks} addToPlaylist={addToPlaylist} />
         <PlaylistForm addPlaylist={addPlaylist}/>
         </>
