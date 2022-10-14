@@ -36,6 +36,10 @@ This is the front-end for the BNTA Spotify Clone backend project, tt is an APP t
 
 ### PROJECT STRUCTURE/DESCRIPTION
 
+### Dataflow 
+
+https://github.com/bendesousa/frontend_project_group4/blob/main/dataflow.png
+
 #### Personal Playlists
 
 -User can create multiple playlists
