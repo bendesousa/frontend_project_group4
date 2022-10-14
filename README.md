@@ -38,7 +38,7 @@ This is the front-end for the BNTA Spotify Clone backend project, tt is an APP t
 
 ### Dataflow 
 
-https://github.com/bendesousa/frontend_project_group4/blob/main/dataflow.png
+![Dataflow diagram]https://github.com/bendesousa/frontend_project_group4/blob/main/dataflow.png
 
 ### Wireframe
 
